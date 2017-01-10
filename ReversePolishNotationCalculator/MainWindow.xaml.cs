@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ReversePolishNotationCalculator.ViewModel;
 
 namespace ReversePolishNotationCalculator
 {
@@ -20,9 +21,26 @@ namespace ReversePolishNotationCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CalculatorViewModel viewModel = new CalculatorViewModel();
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = viewModel;
+        }
+
+        private void EvaluateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                viewModel.Evaluate();
+            }
+            catch (InvalidOperationException exception)
+            {
+                string message = exception.Message + Environment.NewLine + "Clearing calculator";
+                MessageBox.Show(message);
+                viewModel.Clear();
+            }
         }
     }
 }

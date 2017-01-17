@@ -68,10 +68,18 @@ namespace BingoSimulator.ViewModel
             }
         }
 
+        public BingoSimulatorViewModel() => BingoManager.Instance.OnBingoGameFinished += new EventHandler<BingoGameFinishedEventArgs>(GameFinished);
+
+        private void GameFinished(object sender, BingoGameFinishedEventArgs e) => BallsPulledForEachGameTextBox += $"{e.NumberOfBallsCalled} ";
+
         /// <summary>
         /// Play the number of games using the given number of cards.
         /// </summary>
-        public void Play() => AverageNumberOfBallsPulledTextBox = BingoManager.Instance.PlayGamesWithCards(numberOfGamesTextBox, NumberOfBingoCardsTextBox);
+        public void Play()
+        {
+            BallsPulledForEachGameTextBox = "";
+            AverageNumberOfBallsPulledTextBox = BingoManager.Instance.PlayGamesWithCards(numberOfGamesTextBox, NumberOfBingoCardsTextBox);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

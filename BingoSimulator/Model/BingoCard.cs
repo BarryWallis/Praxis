@@ -16,6 +16,8 @@ namespace BingoSimulator.Model
         public static int MaxColumns { get; } = 5;
         public static int NumbersPerColumn { get; } = 15;
 
+
+
         /// <summary>
         /// Create a BingoCard.
         /// </summary>
@@ -23,7 +25,7 @@ namespace BingoSimulator.Model
         {
             Debug.Assert(MaxRows > 0);
             Debug.Assert(MaxColumns > 0);
-            Debug.Assert(NumbersPerColumn >=MaxColumns);
+            Debug.Assert(NumbersPerColumn >= MaxColumns);
 
             for (int row = 0; row < MaxRows; row++)
             {

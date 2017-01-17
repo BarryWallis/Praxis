@@ -9,6 +9,8 @@ namespace BingoSimulator.Model
 {
     public sealed class BingoManager
     {
+        public event EventHandler<BingoGameFinishedEventArgs> OnBingoGameFinished;
+
         private static BingoManager instance;
         public static BingoManager Instance => instance = instance ?? new BingoManager();
 
@@ -58,10 +60,24 @@ namespace BingoSimulator.Model
             for (int game = 0; game < numberOfGames; game++)
             {
                 InitializeBingoCards(bingoCards);
-                total += PlayGameWithCards(bingoCards);
+                int ballsCalled = PlayGameWithCards(bingoCards);
+                GameFinished(ballsCalled);
+                total += ballsCalled;
+                
             }
 
             return total / numberOfGames;
+        }
+
+        /// <summary>
+        /// Raise the OnBingoGameFinishedEvent.
+        /// </summary>
+        /// <param name="total">The number of Bingo balls called for the game.</param>
+        private void GameFinished(int total)
+        {
+            // Make sure someone is listening to event
+            BingoGameFinishedEventArgs args = new BingoGameFinishedEventArgs(total);
+            OnBingoGameFinished?.Invoke(this, args);
         }
 
         /// <summary>

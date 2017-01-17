@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieveOfErasthones", "SieveO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieveOfErasthonesUnitTests", "SieveOfEratosthenesUnitTests\SieveOfErasthonesUnitTests.csproj", "{B95E9C31-A675-4710-ADD7-F59095C1A9B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingoSimulator", "BingoSimulator\BingoSimulator.csproj", "{134A1398-B37A-48E9-84FB-1396C2038EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingoSimulatorUnitTests", "BingoSimulatorUnitTests\BingoSimulatorUnitTests.csproj", "{D8045838-1F80-490A-AFAB-22AB86BF0C04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B95E9C31-A675-4710-ADD7-F59095C1A9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95E9C31-A675-4710-ADD7-F59095C1A9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95E9C31-A675-4710-ADD7-F59095C1A9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{134A1398-B37A-48E9-84FB-1396C2038EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{134A1398-B37A-48E9-84FB-1396C2038EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{134A1398-B37A-48E9-84FB-1396C2038EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{134A1398-B37A-48E9-84FB-1396C2038EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8045838-1F80-490A-AFAB-22AB86BF0C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8045838-1F80-490A-AFAB-22AB86BF0C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8045838-1F80-490A-AFAB-22AB86BF0C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8045838-1F80-490A-AFAB-22AB86BF0C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
